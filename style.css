@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+html {
+  font-size: 16px;
+}
+
+.no-select {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+section.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.main.heaven {
+  background: #2980b9;
+  background: -webkit-linear-gradient(to right, #ffffff, #6dd5fa, #2980b9);
+  background: linear-gradient(to right, #ffffff, #6dd5fa, #2980b9);
+}
+
+section.main.hell {
+  background: #50021c;
+  background: -webkit-linear-gradient(to right, #ffffff, #f11a61, #50021c);
+  background: linear-gradient(to right, #ffffff, #f11a61, #50021c);
+}
+
+section.main:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+}
+
+section.main.heaven::after {
+  background: transparent;
+  background: -webkit-linear-gradient(to top, #2980b9, transparent);
+  background: linear-gradient(to top, #2980b9, transparent);
+}
+
+section.main.hell::after {
+  background: transparent;
+  background: -webkit-linear-gradient(to top, #50021c, transparent);
+  background: linear-gradient(to top, #50021c, transparent);
+}
+
+section.main .mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section.main.heaven .mode {
+  background-color: black;
+}
+
+section.main.hell .mode {
+  background-color: white;
+}
+
+section.main .title {
+  font-size: 12rem;
+  letter-spacing: -6px;
+  position: relative;
+  top: -36px;
+}
+
+section.main.heaven .title {
+  color: #ffffff;
+  text-transform: none;
+}
+
+section.main.hell .title {
+  color: #000000;
+  text-transform: uppercase;
+}
+
+section.main .clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+section.main .clouds img {
+  position: absolute;
+  bottom: 0;
+  max-width: 100%;
+  animation: clouds calc(3s * var(--i)) linear infinite;
+}
+
+@keyframes clouds {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: scale(4);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
