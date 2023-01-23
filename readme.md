@@ -10,5 +10,5 @@ Projeto feito para entender como um pagina web funciona um dark mode e um light 
 ## ✔️ Técnicas e tecnologias utilizadas
 
 - ``JavaScript``
-- ``HTML e CSS`
+- ``HTML e CSS``
 - ``Dark mode e Ligth mode``
